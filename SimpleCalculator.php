@@ -12,7 +12,8 @@ if(isset($_POST['count'])){
         $first = $_POST['first'];
         $second = $_POST['second'];
         $operator = $_POST['operator'];
-        switch($operator){
+        if(is_numeric($first) && is_numeric($second)){
+            switch($operator){
             case'add':
                 $result = $first + $second;
                 break;
@@ -30,6 +31,7 @@ if(isset($_POST['count'])){
                 }
                 break;
         }
+    }else{ echo "<h2>wrong input</h2>";}
     }
 ?>
 <div style=" width: 330px; background: #00bbbf;  margin: 100px auto; padding: 10px 15px 40px 15px; border-radius: 5px; box-shadow: 0px 5px 15px 0px #E1E1E1;">
